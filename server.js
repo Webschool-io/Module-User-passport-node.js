@@ -1,16 +1,17 @@
 'use strict';
 
-const express      = require('express');
-const app          = express();
-const port         = process.env.PORT || 8080;
-const mongoose     = require('mongoose');
-const passport     = require('passport');
-const flash        = require('connect-flash');
-const morgan       = require('morgan');
+require('dotenv').config();
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 8080;
+const mongoose = require('mongoose');
+const passport = require('passport');
+const flash = require('connect-flash');
+const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
-const bodyParser   = require('body-parser');
-const session      = require('express-session');
-const configDB     = require('./config/database.js');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const configDB = require('./config/database.js');
 
 const UserAPI = require('./modules/User/routes');
 

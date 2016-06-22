@@ -1,7 +1,7 @@
 module.exports = {
   'facebookAuth'      :{
-      'clientID'      : 'your-consumer-key-here'
-    , 'clientSecret'  : 'your-client-secret-here'
+      'clientID'      : process.env.facebookAuth_clientID
+    , 'clientSecret'  : process.env.facebookAuth_clientSecret
     , 'callbackURL'   : 'http://localhost:8080/users/auth/facebook/callback'
   }
   ,'twitterAuth'        : {
@@ -15,8 +15,8 @@ module.exports = {
     , 'callbackURL'   :'http://localhost:8080/auth/google/callback'
   }
   ,'githubAuth': {
-      'clientID'      : 'your-consumer-key-here'
-    , 'clientSecret'  : 'your-client-secret-here'
+      'clientID'      : process.env.githubAuth_clientID
+    , 'clientSecret'  : process.env.githubAuth_clientSecret
     , 'callbackURL'   : 'http://localhost:8080/users/auth/github/callback'
   }
 };
