@@ -7,5 +7,5 @@ module.exports = (value) => {
   if(isEmpty) return false;
   if(!isString) return false;
 
-  return (value.length > 6 && value.length < 20);
+  return (value.length > 6 && value.length < 80);
 }

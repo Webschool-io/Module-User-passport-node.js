@@ -1,6 +1,6 @@
 // load up the user model
-const Model = require('../modules/User/model');
-
+const Model = require('../modules/User/atomic/organism/organism-user');
+// console.log('Model', Model)
 //load the auth variables
 const configAuth = require('../modules/User/atomic/hadrons/passwordAuthPassport');
 

@@ -15,29 +15,25 @@ module.exports = (Model) => {
       if(!req.user) {
         // se o usuário não está logado ainda.
         Model.findOne({ 'local.email': email}, function(err, user) {
-
           // se tiver erros, retornar os erros.
-          if(err)
-              return done(err);
-
+          if(err)return done(err)
           // verifica se já tem um usuário com esse email.
-          if(user) {
-              return done(null,false,req.flash('signupMessage', 'That email is already taken.'));
-          } else {
-
+          if(user) return done(null,false,req.flash('signupMessage', 'That email is already taken.'))
+          else {
             // create th user
-            var newModel = new Model();
-
+            var newUser = {};
             //set the user's local credentials
-            newModel.local.email = email;
-            newModel.local.password = newModel.generateHash(password);
+            newUser.local = {}
+            newUser.local.email = req.body.email
+            newUser.local.password = require('../../quarks/quark-generateHash')(req.body.password)
 
             //save the user
-            newModel.save(function(err){
+            Model.create(newUser, function(err){
                 if(err){
-                    throw err;
+                  console.log('err',err)
+                  throw new Error(err)
                 }
-                return done(null, newModel);
+                return done(null, Model)
             });
           }
         });
@@ -55,11 +51,10 @@ module.exports = (Model) => {
              var user = req.user;
              user.local.email = email;
              user.local.password = user.generateHash(password);
-             user.save(function(err){
-               if(err)
-                return done(err);
-
-                return done(null, user);
+             console.log('user', user)
+             Model.create(user, function(err){
+              if(err) return done(err);
+              return done(null, user);
              });
            }
          });

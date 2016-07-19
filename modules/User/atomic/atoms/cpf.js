@@ -1,9 +1,9 @@
 'use strict';
 
-const AtomName = 'Email';
+const AtomName = 'CPF';
 
 module.exports = {
   type: String
 , validate: require('./../hadrons/'+AtomName.toLowerCase()+'ValidateMongoose')
-// , required: true
+, default: '04864713901'
 }

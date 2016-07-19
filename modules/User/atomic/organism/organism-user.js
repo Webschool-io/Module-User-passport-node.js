@@ -1,4 +1,11 @@
 const mongoose  = require('mongoose');
 const Molecule = require('../molecules/molecule-user.js');
 
-module.exports = mongoose.model('User', Molecule);
+const OrganismName = 'User'
+const Organism = mongoose.model(OrganismName, Molecule)
+
+// Coloco os métodos estáticos do Schema no Model
+Organism.generateHash = Molecule.generateHash
+Organism.validPassword = Molecule.validPassword
+console.log('Organism.generateHash', Organism.generateHash)
+module.exports = Organism
