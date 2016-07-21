@@ -586,7 +586,12 @@ Que é utilizado em `passport-local-login`:
 if(!user.validPassword(password))
 ```
 
+## Local
 
+Vamos avalisar estratégia por estratégia, mais usadas, no Passport. Iniciando com o `local` pois é nele que criamos o usuário localmente caso ele não use nenhum login social.
+
+### Signup
+Agora vamos refatorar o arquivo `organelle-passport-local-signup`
 
 
 
