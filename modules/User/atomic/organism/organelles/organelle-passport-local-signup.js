@@ -1,6 +1,7 @@
 const LocalStrategy = require('passport-local').Strategy
 
 module.exports = (Model) => {
+  console.log('local-signup')
   const Strategy = new LocalStrategy({
     //by default, local strategy uses username and password, we will override with email
     usernameField: 'email',  
@@ -36,7 +37,7 @@ module.exports = (Model) => {
         }
       });
     }
-    const UserExists = => {
+    const UserExists = (Model, req) => {
        // ...presumably they're trying to connect a local account
        // BUT let's check if the email used to connect a local account is being used by another user
        Model.findOne({'local.email': email}, function(err, user){
