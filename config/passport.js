@@ -6,28 +6,27 @@ const configAuth = require('../modules/User/atomic/hadrons/passwordAuthPassport'
 
 // expose this function to our app using module.exports
 module.exports = function(passport){
-
+  const BASE_URl = '../modules/User/atomic'
   //used to serialize the user for the session
-  const serializeUser = require('../modules/User/atomic/quarks/quark-passportSerializeUser')();
+  const serializeUser = require(BASE_URl+'/quarks/quark-passportSerializeUser')();
   passport.serializeUser(serializeUser);
 
   //used to deserialize the user
-  const deserializeUser = require('../modules/User/atomic/quarks/quark-passportDeserializeUser')(Model);
+  const deserializeUser = require(BASE_URl+'/quarks/quark-passportDeserializeUser')(Model);
   passport.deserializeUser(deserializeUser);
 
-  const localSignup = require('../modules/User/atomic/organism/organelles/organelle-passport-local-signup')(Model)
+  const localSignup = require(BASE_URl+'/organism/organelles/organelle-passport-local-signup')(Model)
   passport.use('local-signup', localSignup)
-
   // LOCAL
-  const localLogin = require('../modules/User/atomic/organism/organelles/organelle-passport-local-login')(Model)
+  const localLogin = require(BASE_URl+'/organism/organelles/organelle-passport-local-login')(Model)
   passport.use('local-login', localLogin);
 
   // FACEBOOK
-  const facebookLogin = require('../modules/User/atomic/organism/organelles/organelle-passport-facebook')(Model)
+  const facebookLogin = require(BASE_URl+'/organism/organelles/organelle-passport-facebook')(Model)
   passport.use(facebookLogin);
 
   // GITHUB
-  const githubLogin = require('../modules/User/atomic/organism/organelles/organelle-passport-github')(Model)
+  const githubLogin = require(BASE_URl+'/organism/organelles/organelle-passport-github')(Model)
   passport.use(githubLogin);
 
 };
