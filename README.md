@@ -41,7 +41,7 @@ const Molecule = {
 }
 
 //define the schema for our user model
-const userSchema = mongoose.Schema();
+const userSchema = mongoose.Schema(Molecule);
 
 //methods ========================
 //generation a hash
