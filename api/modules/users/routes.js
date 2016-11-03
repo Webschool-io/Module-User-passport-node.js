@@ -12,8 +12,7 @@ router.get('/', (req, res, next) => {
   Controller.find(req, res);
 });
 // get current user
-router.get('/currentuser', isLoggedIn, (req, res, next) => {
-  // delete req.user.auth;
+router.get('/currentuser', isLoggedIn, (req, res) => {
   res.json(req.user);
 });
 // logout
@@ -39,7 +38,6 @@ router.delete('/:id', (req, res, next) => {
 });
 // login
 router.post('/login', passport.authenticate('local-login'), function(req, res){
-  console.log('login', req.body)
   res.json(req.user);
   res.end();
 });
@@ -47,7 +45,10 @@ router.post('/login', passport.authenticate('local-login'), function(req, res){
 
 
 function isLoggedIn(req, res, next){
-  if(req.isAuthenticated()){ return next() };
+  if(req.isAuthenticated())
+  {
+    return next();
+  };
   res.json({success: false});
 }
 

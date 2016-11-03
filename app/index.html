@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <base href="/"></base>
+    <meta charset="utf-8" />
+    <title ng-bind="title"></title>
+
+    <!-- <link rel="shortcut icon" href="app/assets/img/favicon.png"> -->
+
+    <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-controller="AppController">
+    <!-- Header -->
+    <header ui-view="headerModule"></header>
+    <!-- Container -->
+    <div class="dashboard-container">
+        <div class="container">
+            <!-- Contaten -->
+            <div ui-view="mainModule"></div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div ui-view="footerModule"></div>
+
+    <!-- AngularJS -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular/angular-sanitize.js"></script>
+
+    <!-- Angular-ui-router -->
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!-- app.module -->
+    <script src="app/app.js"></script>
+    <!-- router -->
+    <script src="app/blocks/router/module.js"></script>
+    <script src="app/blocks/router/helper.provider.js"></script>
+    <!-- core -->
+    <script src="app/core/module.js"></script>
+    <script src="app/core/config.js"></script>
+    <script src="app/core/route.js"></script>
+    <script src="app/core/services/dataservice.js"></script>
+    <script src="app/core/services/authenticateservice.js"></script>
+    <script src="app/core/controllers/globals.js"></script>
+    <script src="app/core/directives/globals.js"></script>
+    <!-- <script src="app/core/directives/plugin-jquery.js"></script>
+    <script src="app/core/filters/globals.js"></script> -->
+    <!-- login -->
+    <script src="app/modules/login/module.js"></script>
+    <script src="app/modules/login/controller.js"></script>
+    <script src="app/modules/login/route.js"></script>
+    <!-- dashboard -->
+    <script src="app/modules/dashboard/module.js"></script>
+    <script src="app/modules/dashboard/controller.js"></script>
+    <script src="app/modules/dashboard/route.js"></script>
+    <!-- users -->
+    <script src="app/modules/users/module.js"></script>
+    <script src="app/modules/users/controller.js"></script>
+    <script src="app/modules/users/service.js"></script>
+    <script src="app/modules/users/route.js"></script>
+
+</body>
+</html>

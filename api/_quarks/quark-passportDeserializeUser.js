@@ -1,1 +1,1 @@
-module.exports = (Model) => (id, done) => Model.findById(id, (err, user) => done(err, user))
+module.exports = (Model) => (id, done) => Model.findByIdDeserializeUser(id, (err, user, res) => done(err, user));

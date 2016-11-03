@@ -1,0 +1,47 @@
+{
+  "name": "ycontrol",
+  "version": "0.0.1",
+  "description": "Sistema de controle financeiro individual",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon api/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luzmoraes/ycontrol.git"
+  },
+  "keywords": [
+    "financeiro",
+    "controle",
+    "organização",
+    "contas"
+  ],
+  "author": "Anderson Moraes",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/luzmoraes/ycontrol/issues"
+  },
+  "homepage": "https://github.com/luzmoraes/ycontrol#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "compression": "^1.6.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.7.1",
+    "crypto": "0.0.3",
+    "dotenv": "^2.0.0",
+    "express": "^4.13.4",
+    "express-session": "^1.14.1",
+    "file-system": "^2.2.1",
+    "mongoose": "^4.5.0",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-github": "^1.1.0",
+    "passport-google": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.3.0"
+  }
+}
