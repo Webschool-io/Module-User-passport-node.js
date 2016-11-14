@@ -4,7 +4,7 @@
   "description": "Sistema de controle financeiro individual",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon api/app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
