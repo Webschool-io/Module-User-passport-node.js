@@ -4,13 +4,9 @@ const passport = require('passport');
 const Controller = require("./organism");
 
 // Create
-router.post('/', (req, res, next) => {
-  Controller.create(req, res);
-});
+router.post('/', Controller.create)
 // Retrieve
-router.get('/', (req, res, next) => {
-  Controller.find(req, res);
-});
+router.get('/', Controller.find)
 // get current user
 router.get('/currentuser', isLoggedIn, (req, res) => {
   res.json(req.user);
